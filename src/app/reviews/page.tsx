@@ -32,8 +32,7 @@ const reviews: Review[] = [
   {
     id: 3,
     title: "Decent value for the price",
-    content:
-      "It does what it promises. Not perfect, but for the price point it’s a solid option.",
+    content: "It does what it promises. Not perfect, but for the price point it’s a solid option.",
     rating: 3,
     user: "dev_guy",
     date: "2024-01-25T19:47:00Z",
@@ -74,10 +73,7 @@ const ReviewPage = () => {
   return (
     <div className="p-3 w-[1024px] m-auto">
       <label htmlFor="sort">Sort By</label>{" "}
-      <select
-        name="sort"
-        onChange={(e) => setSort(e.target.value as keyof Review)}
-      >
+      <select name="sort" onChange={(e) => setSort(e.target.value as keyof Review)}>
         <option value="rating">Rating</option>
         <option value="date">Date</option>
       </select>

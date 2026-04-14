@@ -29,9 +29,7 @@ type PostsResponse = {
 
 export function PostsList() {
   const [posts, setPosts] = useState<Posts | null>(null);
-  const [pagination, setPagination] = useState<
-    Omit<PostsResponse, "posts" | "total">
-  >({
+  const [pagination, setPagination] = useState<Omit<PostsResponse, "posts" | "total">>({
     skip: 0,
     limit: 10,
   });
@@ -43,7 +41,7 @@ export function PostsList() {
       try {
         setLoading(true);
         const response = await fetch(
-          `https://dummyjson.com/posts?limit=${pagination.limit}&skip=${pagination.skip}`,
+          `https://dummyjson.com/posts?limit=${pagination.limit}&skip=${pagination.skip}`
         );
         if (!response.ok) {
           throw new Error(`HTTP ${response.status}`);

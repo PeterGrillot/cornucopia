@@ -58,14 +58,17 @@ export default function Home() {
         </li>
         <li>
           <Link asChild>
-            <NextLink href="/nested-checkbox">
-              nested-checkbox Challenge
-            </NextLink>
+            <NextLink href="/nested-checkbox">nested-checkbox Challenge</NextLink>
           </Link>
         </li>
         <li>
           <Link asChild>
             <NextLink href="/price">Price Challenge</NextLink>
+          </Link>
+        </li>
+        <li>
+          <Link asChild>
+            <NextLink href="/slacker">Slacker Challenge</NextLink>
           </Link>
         </li>
       </ul>

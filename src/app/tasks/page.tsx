@@ -26,22 +26,13 @@ type Filter = (typeof filters)[number];
 const reducer = (state: Task[], action: Action) => {
   switch (action.type) {
     case "add":
-      return [
-        ...state,
-        { id: generateUuid(), title: action.payload.title, completed: false },
-      ];
+      return [...state, { id: generateUuid(), title: action.payload.title, completed: false }];
 
     case "sortCompleted":
-      return [
-        ...state.filter((i) => i.completed),
-        ...state.filter((i) => !i.completed),
-      ];
+      return [...state.filter((i) => i.completed), ...state.filter((i) => !i.completed)];
 
     case "sortActive":
-      return [
-        ...state.filter((i) => !i.completed),
-        ...state.filter((i) => i.completed),
-      ];
+      return [...state.filter((i) => !i.completed), ...state.filter((i) => i.completed)];
 
     case "toggleComplete":
       const newState = state.map((task) => {
@@ -64,11 +55,9 @@ export function TasksPage() {
 
   const handleFilter = (type: Filter) => setFilter(type);
 
-  const handleToggle = (task: Task) =>
-    dispatch({ type: "toggleComplete", payload: task });
+  const handleToggle = (task: Task) => dispatch({ type: "toggleComplete", payload: task });
 
-  const handleSort = (type: "sortCompleted" | "sortActive") =>
-    dispatch({ type });
+  const handleSort = (type: "sortCompleted" | "sortActive") => dispatch({ type });
   const handleSubmitTask = (event: ChangeEvent<HTMLFormElement>) => {
     event.preventDefault();
     dispatch({

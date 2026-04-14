@@ -39,12 +39,7 @@ function ProductCard({
       </Text>
       <Flex>
         {handleAdd ? (
-          <Button
-            size="1"
-            ml="auto"
-            disabled={disabled}
-            onClick={() => handleAdd(id)}
-          >
+          <Button size="1" ml="auto" disabled={disabled} onClick={() => handleAdd(id)}>
             Add to Cart
           </Button>
         ) : null}
@@ -73,12 +68,7 @@ function CartCard({
       </Text>
       <Flex>
         {handleRemove ? (
-          <Button
-            size="1"
-            ml="auto"
-            onClick={() => handleRemove(id)}
-            variant="outline"
-          >
+          <Button size="1" ml="auto" onClick={() => handleRemove(id)} variant="outline">
             Remove
           </Button>
         ) : null}

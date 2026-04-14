@@ -1,13 +1,5 @@
 "use client";
-import {
-  Button,
-  Checkbox,
-  Flex,
-  Heading,
-  Select,
-  TextArea,
-  TextField,
-} from "@radix-ui/themes";
+import { Button, Checkbox, Flex, Heading, Select, TextArea, TextField } from "@radix-ui/themes";
 import { useReducer } from "react";
 
 /*
@@ -84,10 +76,7 @@ type StateAction =
     }
   | { type: "prevStep" };
 
-const reducer = (
-  state: OnBoardingFormData,
-  action: StateAction,
-): OnBoardingFormData => {
+const reducer = (state: OnBoardingFormData, action: StateAction): OnBoardingFormData => {
   switch (action.type) {
     case "updateForm":
       return { ...state, ...action.payload };
@@ -117,9 +106,7 @@ const reducer = (
 export function OnboardingPage() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const handleSubmitStepOne = (
-    event: React.SyntheticEvent<HTMLFormElement>,
-  ) => {
+  const handleSubmitStepOne = (event: React.SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault();
     const firstName = event.currentTarget.firstName.value;
     const lastName = event.currentTarget.lastName.value;
@@ -130,9 +117,7 @@ export function OnboardingPage() {
     });
   };
 
-  const handleSubmitStepTwo = (
-    event: React.SyntheticEvent<HTMLFormElement>,
-  ) => {
+  const handleSubmitStepTwo = (event: React.SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault();
     const care = event.currentTarget.care.value;
     const careDescription = event.currentTarget.careDescription.value;
@@ -155,10 +140,7 @@ export function OnboardingPage() {
   return (
     <>
       {state.step === 1 ? (
-        <form
-          onSubmit={handleSubmitStepOne}
-          className="w-[400px] m-auto p-4 flex gap-4 flex-col"
-        >
+        <form onSubmit={handleSubmitStepOne} className="w-[400px] m-auto p-4 flex gap-4 flex-col">
           <Heading>Basic Information</Heading>
           <TextField.Root
             required
@@ -183,10 +165,7 @@ export function OnboardingPage() {
         </form>
       ) : null}
       {state.step === 2 ? (
-        <form
-          onSubmit={handleSubmitStepTwo}
-          className="w-[400px] m-auto p-4 flex gap-4 flex-col"
-        >
+        <form onSubmit={handleSubmitStepTwo} className="w-[400px] m-auto p-4 flex gap-4 flex-col">
           <Heading>Care Preferences</Heading>
           <Select.Root name="care" defaultValue={state.care}>
             <Select.Trigger />
@@ -213,10 +192,7 @@ export function OnboardingPage() {
             Have you had Care?
           </Flex>
           {state.hadCare ? (
-            <TextArea
-              name="careDescription"
-              defaultValue={state.careDescription}
-            />
+            <TextArea name="careDescription" defaultValue={state.careDescription} />
           ) : null}
 
           <Button type="button" onClick={() => dispatch({ type: "prevStep" })}>
@@ -226,10 +202,7 @@ export function OnboardingPage() {
         </form>
       ) : null}
       {state.step === 3 ? (
-        <form
-          onSubmit={handleSubmitForm}
-          className="w-[400px] m-auto p-4 flex gap-4 flex-col"
-        >
+        <form onSubmit={handleSubmitForm} className="w-[400px] m-auto p-4 flex gap-4 flex-col">
           <Heading>Insurance & Review</Heading>
           <TextField.Root
             required

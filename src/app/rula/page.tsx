@@ -13,14 +13,7 @@ type ModalProps = React.PropsWithChildren<{
   onClose: () => void;
 }>;
 
-const Modal = ({
-  title,
-  size,
-  hasClose = false,
-  isOpen,
-  children,
-  onClose,
-}: ModalProps) => {
+const Modal = ({ title, size, hasClose = false, isOpen, children, onClose }: ModalProps) => {
   if (isOpen) {
     return (
       <div className="modal__wrapper">
@@ -52,56 +45,42 @@ export function Page() {
     <>
       <div className="page">Hello World!</div>
       <button onClick={handleToggle}>Open</button>
-      <Modal
-        title="My Modal"
-        size="medium"
-        isOpen={isOpen}
-        hasClose={true}
-        onClose={handleClose}
-      >
+      <Modal title="My Modal" size="medium" isOpen={isOpen} hasClose={true} onClose={handleClose}>
         <p>
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal distribution of
-          letters, as opposed to using 'Content here, content here', making it
-          look like readable English. Many desktop publishing packages and web
-          page editors now use Lorem Ipsum as their default model text, and a
-          search for 'lorem ipsum' will uncover many web sites still in their
-          infancy. Various versions have evolved over the years, sometimes by
-          accident, some
+          It is a long established fact that a reader will be distracted by the readable content of
+          a page when looking at its layout. The point of using Lorem Ipsum is that it has a
+          more-or-less normal distribution of letters, as opposed to using 'Content here, content
+          here', making it look like readable English. Many desktop publishing packages and web page
+          editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum'
+          will uncover many web sites still in their infancy. Various versions have evolved over the
+          years, sometimes by accident, some
         </p>
         <p>
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal distribution of
-          letters, as opposed to using 'Content here, content here', making it
-          look like readable English. Many desktop publishing packages and web
-          page editors now use Lorem Ipsum as their default model text, and a
-          search for 'lorem ipsum' will uncover many web sites still in their
-          infancy. Various versions have evolved over the years, sometimes by
-          accident, some
+          It is a long established fact that a reader will be distracted by the readable content of
+          a page when looking at its layout. The point of using Lorem Ipsum is that it has a
+          more-or-less normal distribution of letters, as opposed to using 'Content here, content
+          here', making it look like readable English. Many desktop publishing packages and web page
+          editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum'
+          will uncover many web sites still in their infancy. Various versions have evolved over the
+          years, sometimes by accident, some
         </p>
         <p>
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal distribution of
-          letters, as opposed to using 'Content here, content here', making it
-          look like readable English. Many desktop publishing packages and web
-          page editors now use Lorem Ipsum as their default model text, and a
-          search for 'lorem ipsum' will uncover many web sites still in their
-          infancy. Various versions have evolved over the years, sometimes by
-          accident, some
+          It is a long established fact that a reader will be distracted by the readable content of
+          a page when looking at its layout. The point of using Lorem Ipsum is that it has a
+          more-or-less normal distribution of letters, as opposed to using 'Content here, content
+          here', making it look like readable English. Many desktop publishing packages and web page
+          editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum'
+          will uncover many web sites still in their infancy. Various versions have evolved over the
+          years, sometimes by accident, some
         </p>
         <p>
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal distribution of
-          letters, as opposed to using 'Content here, content here', making it
-          look like readable English. Many desktop publishing packages and web
-          page editors now use Lorem Ipsum as their default model text, and a
-          search for 'lorem ipsum' will uncover many web sites still in their
-          infancy. Various versions have evolved over the years, sometimes by
-          accident, some
+          It is a long established fact that a reader will be distracted by the readable content of
+          a page when looking at its layout. The point of using Lorem Ipsum is that it has a
+          more-or-less normal distribution of letters, as opposed to using 'Content here, content
+          here', making it look like readable English. Many desktop publishing packages and web page
+          editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum'
+          will uncover many web sites still in their infancy. Various versions have evolved over the
+          years, sometimes by accident, some
         </p>
         <button onClick={handleToggle}>Close</button>
       </Modal>

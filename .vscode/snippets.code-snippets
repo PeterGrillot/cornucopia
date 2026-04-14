@@ -6,9 +6,9 @@
       "  ${2:foo}.${3:bar} === \"${4:1}\"",
       "    ? { ...${2:foo}, ${5} } // Updates go here",
       "    : ${2:foo}",
-      ");"
+      ");",
     ],
-    "description": "update array by (foo)"
+    "description": "update array by (foo)",
   },
 
   "sfofna - build object from nested array": {
@@ -19,8 +19,8 @@
       "  .reduce((acc, ${5:bar}) => {",
       "    acc[${5:bar}.name] = \"${6}\"; // Update value",
       "    return acc;",
-      "  }, {} as Record<string, string>);"
+      "  }, {} as Record<string, string>);",
     ],
-    "description": "build object from nested array"
-  }
+    "description": "build object from nested array",
+  },
 }

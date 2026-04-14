@@ -45,7 +45,7 @@ const initialState: User[] = [
 export function debounce<T extends (...args: Parameters<T>) => ReturnType<T>>(
   callback: T,
   wait: number,
-  immediate?: boolean,
+  immediate?: boolean
 ): (...args: Parameters<T>) => void {
   let timeout: NodeJS.Timeout | undefined;
 
@@ -89,9 +89,7 @@ const reducer = (state: Users, action: UsersAction): Users => {
       // filtering
       return initialState.filter((i) => {
         if (
-          i.email
-            .toLowerCase()
-            .startsWith(action.payload.toLowerCase().trim()) ||
+          i.email.toLowerCase().startsWith(action.payload.toLowerCase().trim()) ||
           i.name.toLowerCase().startsWith(action.payload.toLowerCase().trim())
         ) {
           return true;
@@ -137,7 +135,7 @@ export function UsersList() {
             return i;
         }
       }),
-    [state, filter],
+    [state, filter]
   );
 
   return (
@@ -170,11 +168,7 @@ export function UsersList() {
         </Button>
       </div>
       <div className="m-2 flex items-center gap-2">
-        <TextField.Root
-          className="flex-1"
-          name="search"
-          onChange={handleSearch}
-        />
+        <TextField.Root className="flex-1" name="search" onChange={handleSearch} />
         <Button type="button" onClick={handleClear}>
           Clear
         </Button>

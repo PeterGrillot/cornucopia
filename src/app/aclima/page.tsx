@@ -131,10 +131,7 @@ function BlockGrid({
     onSelect(e);
   };
   return data.map((block) => (
-    <button
-      onClick={handleClick}
-      style={{ background: getAQIColor(block.value) }}
-    >
+    <button onClick={handleClick} style={{ background: getAQIColor(block.value) }}>
       Level: {block.value}
     </button>
   ));
@@ -152,10 +149,7 @@ function BlockGrid({
 //   - Bonus: Animate the line when selectedHour changes
 
 function TimeSeriesChart({ block, pollutant, selectedHour, onHourChange }) {
-  if (!block)
-    return (
-      <p style={{ color: "#666" }}>Select a block to see its time series.</p>
-    );
+  if (!block) return <p style={{ color: "#666" }}>Select a block to see its time series.</p>;
   // ← your implementation here
   return <div>TimeSeriesChart not yet implemented</div>;
 }
@@ -189,7 +183,7 @@ export default function AclimaDashboard() {
 
   const selectedBlock = useMemo(
     () => BLOCKS.find((b) => b.id === selectedBlockId) ?? null,
-    [selectedBlockId],
+    [selectedBlockId]
   );
 
   console.log(data, loading);

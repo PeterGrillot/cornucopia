@@ -73,12 +73,7 @@ function Explorer() {
     <div className="flex">
       <ul className="p-6 w-33%">
         {structured.map((dir) => (
-          <FileSet
-            key={dir.path}
-            path={dir.path}
-            content={dir.content}
-            onOpen={handleOpen}
-          />
+          <FileSet key={dir.path} path={dir.path} content={dir.content} onOpen={handleOpen} />
         ))}
       </ul>
       {fileContent}

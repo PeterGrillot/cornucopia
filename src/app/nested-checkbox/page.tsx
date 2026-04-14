@@ -35,27 +35,18 @@ const CheckboxSet = ({
 }) => {
   return (
     <li className="ml-4">
-      <Checkbox
-        checked={state[id] ?? false}
-        id={id}
-        onCheckedChange={() => onClick(id)}
-      />
+      <Checkbox checked={state[id] ?? false} id={id} onCheckedChange={() => onClick(id)} />
       <label htmlFor={id}>{title}</label>
       <ul>
         {items
-          ? items.map((i) => (
-              <CheckboxSet key={i.id} {...i} state={state} onClick={onClick} />
-            ))
+          ? items.map((i) => <CheckboxSet key={i.id} {...i} state={state} onClick={onClick} />)
           : null}
       </ul>
     </li>
   );
 };
 
-const flattenList = (
-  list: List[],
-  check?: boolean,
-): Record<string, boolean> => {
+const flattenList = (list: List[], check?: boolean): Record<string, boolean> => {
   return list
     .flatMap((i) => {
       if (i.items) return i.items;
@@ -66,14 +57,12 @@ const flattenList = (
         acc[item.id] = check ?? item.checked;
         return acc;
       },
-      {} as Record<string, boolean>,
+      {} as Record<string, boolean>
     );
 };
 
 export default function Page() {
-  const [state, setState] = useState<Record<string, boolean>>(
-    flattenList(LIST),
-  );
+  const [state, setState] = useState<Record<string, boolean>>(flattenList(LIST));
 
   const handleClick = (id: string) => {
     // check if has children
